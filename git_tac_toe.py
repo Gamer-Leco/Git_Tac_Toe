@@ -96,7 +96,9 @@ def afficher_grille():
   print("----- Grille -----\n")
 
   for i in range(3):
-    pass # continuer
+    print(" | ".join(grid[i*3:i*3+3]))
+    if i < 2:
+      print("---------")
 
   print()
 
