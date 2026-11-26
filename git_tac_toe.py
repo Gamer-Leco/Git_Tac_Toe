@@ -3,3 +3,4 @@
 # Cours : MA-24
 # Version : 1.0
 
+import random as r
