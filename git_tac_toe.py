@@ -61,7 +61,7 @@ def start_game():
   if not player_o:
     player_o = "Joueur 2"
 
-  #jouer_tour()
+  jouer_tour()
 
 def check_victoire():
   global game_state, winner
@@ -100,5 +100,27 @@ def afficher_grille():
       print("---------")
 
   print()
+
+def end_game():
+  global score_x, score_o, grid, turn, game_state
+
+  clear_console()
+  print("----- Fin de partie -----\n")
+  print("Score :")
+  print("X - " + str(score_x))
+  print("O - " + str(score_o))
+
+  if input("\nRecommencer ? (Y/N) : ").lower() == "y":
+    grid = [str(i) for i in range(1, 10)]
+    turn = r.choice(["X", "O"])
+    game_state = "running"
+    jouer_tour()
+  else:
+    clear_console()
+    print("Merci d'avoir joué à " + title + " !")
+
+def jouer_tour():
+  global turn, game_state, score_x, score_o
+  pass
 
 start_game()
