@@ -95,7 +95,7 @@ def computer_play():
 def afficher_grille():
   print("----- Grille -----\n")
 
-  for i in range(3):
+  for i in range(2):
     print(" | ".join(grid[i*3:i*3+3]))
     if i < 2:
       print("---------")
