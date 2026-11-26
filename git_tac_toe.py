@@ -63,7 +63,35 @@ def start_game():
 
   #jouer_tour()
 
+def check_victoire():
+  global game_state, winner
+  conditions = [
+    [0,1,2],
+    [3,4,5] # continuer (8 en tout)
+  ]
+  for condition in conditions:
+    a, b, c = condition
 
+    if grid[a] == grid[b] == grid[c]:
+      winner = grid[a]
+      game_state = "win"
+      return
 
+  if all(cell in ["X", "O"] for cell in grid):
+    game_state = "draw"
+
+def computer_play():
+  available = [i for i in range(9) if grid[i] not in ["X", "O"]]
+
+  if available:
+    grid[r.choice(available)] = "O"
+
+def afficher_grille():
+  print("----- Grille -----\n")
+
+  for i in range(3):
+    pass # continuer
+
+  print()
 
 start_game()
