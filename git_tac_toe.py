@@ -62,3 +62,8 @@ def start_game():
     player_o = "Joueur 2"
 
   #jouer_tour()
+
+
+
+
+start_game()
